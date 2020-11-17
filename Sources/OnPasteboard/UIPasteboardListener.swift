@@ -11,10 +11,6 @@
  }
  */
 
-public enum OnPasteboardValue {
-    case string(matching: NSRegularExpression)
-}
-
 #if !os(macOS)
 import UIKit
 import SwiftUI
@@ -24,20 +20,34 @@ public final class PasteboardListener: ObservableObject {
     
     private static let applicationActive = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
     
-    private var appActive: AnyCancellable? = nil
+    private var pasteboardTarget: PasteboardTarget
+    private var pasteboardCancellable: AnyCancellable? = nil
     
-    init() {
-        
+    init(pasteboardTarget: PasteboardTarget) {
+        self.pasteboardTarget = pasteboardTarget
+    }
+    
+    func initializeSubscriptions() {
+        self.pasteboardCancellable = NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
+            .sink { [weak self] _ in
+                switch self?.pasteboardTarget {
+                case .string(let stringPattern, let onMatch):
+                    self?.checkPasteboard(matching: stringPattern, onMatch: onMatch)
+                case .none:
+                    print("none")
+                }
+            }
     }
     
     
-//    private func checkPasteboard(matching stringPattern: NSRegularExpression) {
-//        if let pasteboardString = UIPasteboard.general.string,
-//           let all = NSRange(pasteboardString),
-//           let result = stringPattern.firstMatch(in: pasteboardString, options: [], range: all)
-//        {
-//            let range = Range(result.range, in: pasteboardString)
-//        }
-//    }
+    private func checkPasteboard(matching stringPattern: NSRegularExpression, onMatch: PasteboardTarget.StringCallback) {
+        if let pasteboardString = UIPasteboard.general.string,
+           let all = NSRange(pasteboardString),
+           let result = stringPattern.firstMatch(in: pasteboardString, options: [], range: all),
+           let range = Range(result.range, in: pasteboardString)
+        {
+            onMatch(pasteboardString, pasteboardString[range])
+        }
+    }
 }
 #endif

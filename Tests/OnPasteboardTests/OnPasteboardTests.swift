@@ -6,7 +6,7 @@ final class OnPasteboardTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(OnPasteboard().text, "Hello, World!")
+//        XCTAssertEqual(OnPasteboard().text, "Hello, World!")
     }
 
     static var allTests = [

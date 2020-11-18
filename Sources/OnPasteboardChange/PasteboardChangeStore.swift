@@ -1,5 +1,5 @@
 //
-//  OPCPasteboardItem.UIKit.swift
+//  PasteboardChangeStore.UIKit.swift
 //  
 //
 //  Created by Kyle Nazario on 11/18/20.
@@ -23,6 +23,8 @@ final class PasteboardChangeStore: ObservableObject {
 
 import AppKit
 extension PasteboardChangeStore {
+    // AppKit has no pasteboard changed notification, so we poll changeCount
+    // https://stackoverflow.com/questions/5033266/can-i-receive-a-callback-whenever-an-nspasteboard-is-written-to#comment107052280_5033480
     private static let pasteboardChanged = Timer.publish(every: 2, on: .current, in: .common)
         .autoconnect()
         .map { _ in

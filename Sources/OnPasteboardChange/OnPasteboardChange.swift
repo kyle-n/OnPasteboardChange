@@ -13,6 +13,8 @@ public extension View {
     }
 }
 
+public typealias PasteboardCallback = () -> Void
+
 struct PasteboardChangeListenerView<T>: View where T: View {
     private let containingView: T
     

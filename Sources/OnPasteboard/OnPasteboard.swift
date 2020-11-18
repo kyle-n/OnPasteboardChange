@@ -2,7 +2,10 @@ import SwiftUI
 import Combine
 
 public extension View {
-    func onPasteboard(matching pattern: NSRegularExpression, then: @escaping PasteboardTarget.StringCallback) -> PasteboardListenerView<Self> {
+    func onPasteboard(
+        matching pattern: NSRegularExpression,
+        then: @escaping PasteboardTarget.StringCallback
+    ) -> some View {
         PasteboardListenerView<Self>(pasteboardTarget: .string(matching: pattern, onMatch: then)) {
             self
         }

@@ -16,29 +16,9 @@ import UIKit
 import SwiftUI
 import Combine
 
-public final class PasteboardListener: ObservableObject {
+extension PasteboardListener {
     
     private static let applicationActive = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-    
-    private var pasteboardTarget: PasteboardTarget
-    private var pasteboardCancellable: AnyCancellable? = nil
-    
-    init(pasteboardTarget: PasteboardTarget) {
-        self.pasteboardTarget = pasteboardTarget
-    }
-    
-    func initializeSubscriptions() {
-        self.pasteboardCancellable = NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
-            .sink { [weak self] _ in
-                switch self?.pasteboardTarget {
-                case .string(let stringPattern, let onMatch):
-                    self?.checkPasteboard(matching: stringPattern, onMatch: onMatch)
-                case .none:
-                    print("none")
-                }
-            }
-    }
-    
     
     private func checkPasteboard(matching stringPattern: NSRegularExpression, onMatch: PasteboardTarget.StringCallback) {
         if let pasteboardString = UIPasteboard.general.string,

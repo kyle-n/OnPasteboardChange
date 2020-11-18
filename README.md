@@ -1,6 +1,6 @@
 # OnPasteboardChange
 
-A SwiftUI View modifier for UIKit and AppKit that runs whenever the pasteboard changes.
+A SwiftUI View modifier that triggers a callback whenever the pasteboard changes. Works with UIKit and AppKit - perfect for cross-platform SwiftUI projects.
 
 ## Installation
 
@@ -35,11 +35,37 @@ struct ContentView: View {
 }
 ```
 
-The idea with this modifier is only to alert your code the pasteboard has changed. Your code can then check the pasteboard, read from it, write to it or do anything you like. 
-
-The callback function passed into `.onPasteboardChange` does not pass any information about the contents of the clipboard. This avoids triggering the iOS 14+ clipboard alert.
+All this modifier does is alert your code the pasteboard has changed. Your code can then check the pasteboard, read from it, write to it or do anything you like. This way, your code can control when to check the clipboard (and when to trigger the iOS 14 "X app pasted from Y app" alert).
 
 The modifier will pick up changes to the pasteboard while the app is in the background. This works on iOS and macOS. 
+
+### Custom pasteboards
+
+By default, `.onPasteboardChange` will watch `UIPasteboard.general` or `NSPasteboard.general` for changes. However, if you have a custom pasteboard, you can track changes on that as well. 
+
+```swift
+import OnPasteboardChange
+
+struct ContentView: View {
+    @State private var text: String = ""
+    
+    let pb = UIPasteboard.withUniqueName()
+    
+    var body: some View {
+        VStack {
+            Button("Add to Custom Pasteboard") {
+                pb.addItems([["newItem": "value"]])
+            }
+            TextEditor(text: $text)
+                .padding()
+                .onPasteboardChange(for: pb) {
+                    // only triggered after pressing "Add to Custom Pasteboard"
+                    print("custom pb changed")
+                }
+        }
+    }
+}
+```
 
 ## Credits
 

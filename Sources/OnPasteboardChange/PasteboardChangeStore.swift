@@ -31,10 +31,10 @@ final class PasteboardChangeStore: ObservableObject {
         Timer.publish(every: 2, on: .current, in: .common)
             .autoconnect()
             .map { _ in
-                let count = NSPasteboard.general.changeCount
+                let count = pasteboard.changeCount
                 return count
             }
-            .merge(with: Just(NSPasteboard.general.changeCount))
+            .merge(with: Just(pasteboard.changeCount))
             .removeDuplicates()
             .dropFirst()
             .void()

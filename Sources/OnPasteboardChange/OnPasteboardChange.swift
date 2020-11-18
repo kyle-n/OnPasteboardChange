@@ -7,9 +7,17 @@
 
 import SwiftUI
 
+#if os(macOS)
+import AppKit
+public typealias UIOrNSPasteboard = NSPasteboard
+#else
+import UIKit
+public typealias UIOrNSPasteboard = UIPasteboard
+#endif
+
 public extension View {
-    func onPasteboardChange(do callback: @escaping PasteboardCallback) -> some View {
-        PasteboardChangeListenerView(containing: self, do: callback)
+    func onPasteboardChange(for pasteboard: UIOrNSPasteboard = .general, do callback: @escaping PasteboardCallback) -> some View {
+        PasteboardChangeListenerView(containing: self, for: pasteboard, do: callback)
     }
 }
 
@@ -20,10 +28,10 @@ struct PasteboardChangeListenerView<T>: View where T: View {
     
     @StateObject private var store: PasteboardChangeStore
     
-    init(containing view: T, do callback: @escaping PasteboardCallback) {
+    init(containing view: T, for pasteboard: UIOrNSPasteboard, do callback: @escaping PasteboardCallback) {
         self.containingView = view
         
-        let store = PasteboardChangeStore(callback: callback)
+        let store = PasteboardChangeStore(for: pasteboard, callback: callback)
         _store = StateObject<PasteboardChangeStore>(wrappedValue: store)
     }
     

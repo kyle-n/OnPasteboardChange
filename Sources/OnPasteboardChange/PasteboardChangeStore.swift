@@ -6,61 +6,58 @@
 //
 
 import Combine
+#if os(macOS)
+import AppKit
+#else
+import UIKit
+#endif
 
 final class PasteboardChangeStore: ObservableObject {
     
     private var pasteboardChangedSubscription: AnyCancellable? = nil
+    
     private let callback: PasteboardCallback
     
-    init(callback: @escaping PasteboardCallback) {
+    init(for pasteboard: UIOrNSPasteboard, callback: @escaping PasteboardCallback) {
         self.callback = callback
-        self.pasteboardChangedSubscription = PasteboardChangeStore.pasteboardChanged
+        self.pasteboardChangedSubscription = getPasteboardChangedPublisher(pasteboard: pasteboard)
             .sink { [weak self] _ in self?.callback() }
     }
-}
-
-#if os(macOS)
-
-import AppKit
-extension PasteboardChangeStore {
-    // AppKit has no pasteboard changed notification, so we poll changeCount
-    // https://stackoverflow.com/questions/5033266/can-i-receive-a-callback-whenever-an-nspasteboard-is-written-to#comment107052280_5033480
-    private static let pasteboardChanged = Timer.publish(every: 2, on: .current, in: .common)
-        .autoconnect()
-        .map { _ in
-            let count = NSPasteboard.general.changeCount
-            return count
-        }
-        .merge(with: Just(NSPasteboard.general.changeCount))
-        .removeDuplicates()
-        .dropFirst()
-        .void()
-        .eraseToAnyPublisher()
-}
-
-#else
-
-import UIKit
-extension PasteboardChangeStore {
-    private static let pasteboardChangedInApp = NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
-    private static let applicationActived = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-    private static var systemPasteboardChangeCount: Int { UIPasteboard.general.changeCount }
     
-    private static let pasteboardChanged: AnyPublisher<Void, Never> = { () -> AnyPublisher<Void, Never> in
-        pasteboardChangedInApp
+    #if os(macOS)
+    private func getPasteboardChangedPublisher(pasteboard: UIOrNSPasteboard) -> AnyPublisher<Void, Never> {
+        // AppKit has no pasteboard changed notification, so we poll changeCount
+        // https://stackoverflow.com/questions/5033266/can-i-receive-a-callback-whenever-an-nspasteboard-is-written-to#comment107052280_5033480
+        Timer.publish(every: 2, on: .current, in: .common)
+            .autoconnect()
+            .map { _ in
+                let count = NSPasteboard.general.changeCount
+                return count
+            }
+            .merge(with: Just(NSPasteboard.general.changeCount))
+            .removeDuplicates()
+            .dropFirst()
+            .void()
+            .eraseToAnyPublisher()
+    }
+    #else
+    private func getPasteboardChangedPublisher(pasteboard: UIOrNSPasteboard) -> AnyPublisher<Void, Never> {
+        let pasteboardChangedInApp = NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
+        let applicationActived = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+        return pasteboardChangedInApp
             .merge(with: applicationActived)
             .map { _ -> Int in
                 // clone value for removeDuplicates
-                let count = systemPasteboardChangeCount
+                let count = pasteboard.changeCount
                 return count
             }
-            .merge(with: Just(systemPasteboardChangeCount))
+            .merge(with: Just(pasteboard.changeCount))
             .print()
             .removeDuplicates()
             .dropFirst()
             .print()
             .void()
             .eraseToAnyPublisher()
-    }()
+    }
+    #endif
 }
-#endif

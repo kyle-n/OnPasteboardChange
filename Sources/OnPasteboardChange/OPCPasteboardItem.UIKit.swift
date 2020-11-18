@@ -17,21 +17,18 @@ final class PasteboardChangeStore: ObservableObject {
     private static var systemPasteboardChangeCount: Int { UIPasteboard.general.changeCount }
     
     private static let pasteboardChanged: AnyPublisher<Void, Never> = { () -> AnyPublisher<Void, Never> in
-        let activatedAndChanged = PasteboardChangeStore.applicationActived
+        pasteboardChangedInApp
+            .merge(with: applicationActived)
             .map { _ -> Int in
-                // Count must be cloned for removeDuplicates, it is computed
-                let count = PasteboardChangeStore.systemPasteboardChangeCount
+                let count = systemPasteboardChangeCount
                 return count
             }
-            .merge(with: Just(PasteboardChangeStore.systemPasteboardChangeCount))
+            .merge(with: Just(systemPasteboardChangeCount))
+            .print()
             .removeDuplicates()
             .dropFirst()
-            .map { _ in Void() }
-            .eraseToAnyPublisher()
-        return pasteboardChangedInApp
             .print()
             .map { _ in Void() }
-            .merge(with: activatedAndChanged)
             .eraseToAnyPublisher()
     }()
     

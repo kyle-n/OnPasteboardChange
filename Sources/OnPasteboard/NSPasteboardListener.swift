@@ -17,18 +17,26 @@ extension PasteboardListener {
         .removeDuplicates()
         .eraseToAnyPublisher()
     
+    private static func getFirstPasteboardItemAsString() -> String? {
+        guard let pasteboardStringData = NSPasteboard.general.pasteboardItems?.first?.data(forType: .string)
+        else { return nil }
+        return String(data: pasteboardStringData, encoding: .utf8)
+    }
+    
     func checkPasteboard(matching stringPattern: NSRegularExpression, onMatch: PasteboardTarget.RegexCallback) {
-        guard let pasteboardStringData = NSPasteboard.general.pasteboardItems?.first?.data(forType: .string),
-           let pasteboardString = String(data: pasteboardStringData, encoding: .utf8)
-        else { return }
-        
+        guard let pasteboardString = PasteboardListener.getFirstPasteboardItemAsString() else { return }
         let all = NSRange(location: 0, length: pasteboardString.count)
         
         guard let result = stringPattern.firstMatch(in: pasteboardString, options: [], range: all),
            let range = Range(result.range, in: pasteboardString)
         else { return }
-        
         onMatch(pasteboardString, pasteboardString[range])
+    }
+    
+    func checkPasteboard(equaling stringTarget: String, onEquals: PasteboardTarget.StringCallback) {
+        guard let pasteboardString = PasteboardListener.getFirstPasteboardItemAsString() else { return }
+        guard pasteboardString == stringTarget else { return }
+        onEquals(pasteboardString)
     }
 }
 #endif

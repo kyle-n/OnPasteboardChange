@@ -22,6 +22,8 @@ final class PasteboardListener: ObservableObject {
                 switch self?.pasteboardTarget {
                 case .regex(let stringPattern, let onMatch):
                     self?.checkPasteboard(matching: stringPattern, onMatch: onMatch)
+                case .string(let stringTarget, let onEquals):
+                    self?.checkPasteboard(equaling: stringTarget, onEquals: onEquals)
                 case .none:
                     print("none")
                 }

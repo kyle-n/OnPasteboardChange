@@ -1,5 +1,5 @@
 import XCTest
-@testable import OnPasteboard
+@testable import OnPasteboardChange
 
 final class OnPasteboardTests: XCTestCase {
     func testExample() {

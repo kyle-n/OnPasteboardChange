@@ -4,22 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "OnPasteboard",
+    name: "OnPasteboardChange",
     platforms: [
         .macOS(.v11),
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "OnPasteboard",
-            targets: ["OnPasteboard"]),
+            name: "OnPasteboardChange",
+            targets: ["OnPasteboardChange"]),
     ],
     targets: [
         .target(
-            name: "OnPasteboard",
+            name: "OnPasteboardChange",
             dependencies: []),
         .testTarget(
-            name: "OnPasteboardTests",
-            dependencies: ["OnPasteboard"]),
+            name: "OnPasteboardChangeTests",
+            dependencies: ["OnPasteboardChange"]),
     ]
 )

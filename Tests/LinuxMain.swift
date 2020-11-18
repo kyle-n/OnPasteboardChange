@@ -1,7 +1,7 @@
 import XCTest
 
-import OnPasteboardTests
+import OnPasteboardChangeTests
 
 var tests = [XCTestCaseEntry]()
-tests += OnPasteboardTests.allTests()
+tests += OnPasteboardChangeTests.allTests()
 XCTMain(tests)

@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-public typealias PasteboardCallback = ([String: Any]) -> Void
+public typealias PasteboardCallback = () -> Void
 
 public final class PasteboardChangeStore: ObservableObject {
     private static let pasteboardChanged = NotificationCenter.default.publisher(for: UIPasteboard.changedNotification)
@@ -24,8 +24,7 @@ public final class PasteboardChangeStore: ObservableObject {
     func initializeSubscriptions() {
         pasteboardChangedSubscription = PasteboardChangeStore.pasteboardChanged
             .sink { _ in
-                guard let pbItem = UIPasteboard.general.items.first else { return }
-                self.callback(pbItem)
+                self.callback()
             }
     }
 }

@@ -35,7 +35,7 @@ extension PasteboardChangeStore {
         .merge(with: Just(NSPasteboard.general.changeCount))
         .removeDuplicates()
         .dropFirst()
-        .map { _ in Void() }
+        .void()
         .eraseToAnyPublisher()
 }
 
@@ -51,6 +51,7 @@ extension PasteboardChangeStore {
         pasteboardChangedInApp
             .merge(with: applicationActived)
             .map { _ -> Int in
+                // clone value for removeDuplicates
                 let count = systemPasteboardChangeCount
                 return count
             }
@@ -59,7 +60,7 @@ extension PasteboardChangeStore {
             .removeDuplicates()
             .dropFirst()
             .print()
-            .map { _ in Void() }
+            .void()
             .eraseToAnyPublisher()
     }()
 }

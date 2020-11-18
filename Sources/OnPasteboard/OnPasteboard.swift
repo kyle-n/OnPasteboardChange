@@ -4,17 +4,17 @@ import Combine
 public extension View {
     func onPasteboard(
         matching pattern: NSRegularExpression,
-        then: @escaping PasteboardTarget.StringCallback
+        then: @escaping PasteboardTarget.RegexCallback
     ) -> some View {
-        PasteboardListenerView<Self>(pasteboardTarget: .string(matching: pattern, onMatch: then)) {
+        PasteboardListenerView<Self>(pasteboardTarget: .regex(matching: pattern, onMatch: then)) {
             self
         }
     }
 }
 
 public enum PasteboardTarget {
-    public typealias StringCallback = (_ contents: String, _ match: Substring) -> Void
-    case string(matching: NSRegularExpression, onMatch: StringCallback)
+    public typealias RegexCallback = (_ contents: String, _ match: Substring) -> Void
+    case regex(matching: NSRegularExpression, onMatch: RegexCallback)
 }
 
 public struct PasteboardListenerView<T>: View where T: View {

@@ -20,7 +20,7 @@ final class PasteboardListener: ObservableObject {
         self.pasteboardCancellable = PasteboardListener.pasteboardChangedPublisher
             .sink { [weak self] _ in
                 switch self?.pasteboardTarget {
-                case .string(let stringPattern, let onMatch):
+                case .regex(let stringPattern, let onMatch):
                     self?.checkPasteboard(matching: stringPattern, onMatch: onMatch)
                 case .none:
                     print("none")

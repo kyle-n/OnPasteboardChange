@@ -17,7 +17,7 @@ extension PasteboardListener {
         .removeDuplicates()
         .eraseToAnyPublisher()
     
-    func checkPasteboard(matching stringPattern: NSRegularExpression, onMatch: PasteboardTarget.StringCallback) {
+    func checkPasteboard(matching stringPattern: NSRegularExpression, onMatch: PasteboardTarget.RegexCallback) {
         guard let pasteboardStringData = NSPasteboard.general.pasteboardItems?.first?.data(forType: .string),
            let pasteboardString = String(data: pasteboardStringData, encoding: .utf8)
         else { return }

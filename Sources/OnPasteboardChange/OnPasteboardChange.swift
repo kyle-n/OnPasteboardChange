@@ -24,7 +24,6 @@ struct PasteboardChangeListenerView<T>: View where T: View {
         self.containingView = view
         
         let store = PasteboardChangeStore(callback: callback)
-        store.initializeSubscriptions()
         _store = StateObject<PasteboardChangeStore>(wrappedValue: store)
     }
     

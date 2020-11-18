@@ -14,11 +14,8 @@ final class PasteboardChangeStore: ObservableObject {
     
     init(callback: @escaping PasteboardCallback) {
         self.callback = callback
-    }
-    
-    func initializeSubscriptions() {
-        pasteboardChangedSubscription = PasteboardChangeStore.pasteboardChanged
-            .sink { _ in self.callback() }
+        self.pasteboardChangedSubscription = PasteboardChangeStore.pasteboardChanged
+            .sink { [weak self] _ in self?.callback() }
     }
 }
 

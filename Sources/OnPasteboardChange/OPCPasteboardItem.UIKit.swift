@@ -23,9 +23,9 @@ public final class PasteboardChangeStore: ObservableObject {
     
     func initializeSubscriptions() {
         pasteboardChangedSubscription = PasteboardChangeStore.pasteboardChanged
-            .sink {
-                print($0, "got change")
-                print(UIPasteboard.general.items.first)
+            .sink { _ in
+                guard let pbItem = UIPasteboard.general.items.first else { return }
+                self.callback(pbItem)
             }
     }
 }

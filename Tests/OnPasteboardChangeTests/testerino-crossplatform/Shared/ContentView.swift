@@ -32,7 +32,6 @@ struct ContentView: View {
                 customPb.addItems([mockItem])
                 #endif
             }
-            Text("Changes: " + String(counter))
             
             if pbMode == .usingDefault {
                 TextEditor(text: $text)
@@ -47,6 +46,11 @@ struct ContentView: View {
                     }
             }
         }
+        .navigationTitle(changeCount)
+    }
+    
+    private var changeCount: String {
+        "Changes: " + String(counter)
     }
     
     enum PBMode {

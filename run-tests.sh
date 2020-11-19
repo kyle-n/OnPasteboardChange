@@ -5,6 +5,9 @@ testerino_project='Tests/OnPasteboardChangeTests/testerino-crossplatform/testeri
 
 # Build testerino app
 # xcodebuild build -sdk iphonesimulator -scheme 'testerino-crossplatform (iOS)' -project $testerino_project
+#killall Simulator
+#defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool false
 xcodebuild test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' -scheme 'testerino-crossplatform (iOS)' -project $testerino_project
+#defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool true
 
 # xcodebuild test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11' -scheme $scheme_name

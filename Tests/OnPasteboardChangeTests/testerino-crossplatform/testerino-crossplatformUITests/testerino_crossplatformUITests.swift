@@ -8,46 +8,43 @@
 import XCTest
 
 class testerino_crossplatformUITests: XCTestCase {
-    
-    var app: XCUIApplication? = nil
 
     override func setUpWithError() throws {
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-        app = XCUIApplication()
-        app?.launch()
-        print(app?.buttons as Any)
+        print("1666666666666666666666666666666666666666666666666666")
     }
 
     override func tearDownWithError() throws {
-        app?.terminate()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testChangesOnInAppCopy() throws {
-        print("----------------------- hai")
-        
-        XCTAssertTrue(app!.staticTexts["Changes: 0"].exists)
-        XCTAssertFalse(app!.staticTexts["Changes: 1"].exists)
-        print("8888888888888888888888 yep")
-        
-        let textView = app!.textViews.firstMatch
+        print("19999999999999999999999999999999999999999999999999999999")
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        app.launch()
+        let textView = app.textViews.firstMatch
+//        let textView = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textView).element
         textView.tap()
-        textView.typeText("one")
+        
+        app.keys["O"].tap()
+        app.keys["n"].tap()
+        app.keys["e"].tap()
+        
         textView.doubleTap()
-        app!.menuItems["Copy"].tap()
-
-        XCTAssertFalse(app!.staticTexts["Changes: 0"].exists)
-        XCTAssertTrue(app!.staticTexts["Changes: 1"].exists)
+        app.staticTexts["Copy"].tap()
+        
+        print("------------------------------------ qq before assert")
+        print(app.staticTexts)
+        let counter = app.staticTexts["counter"]
+        print(app.staticTexts["Changes: 1"].exists, "999999999999999999")
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTApplicationLaunchMetric()]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }

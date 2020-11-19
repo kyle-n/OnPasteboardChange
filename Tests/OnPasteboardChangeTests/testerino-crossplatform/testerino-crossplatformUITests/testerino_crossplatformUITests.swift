@@ -28,6 +28,18 @@ class testerino_crossplatformUITests: XCTestCase {
         textView.doubleTap()
         app.staticTexts["Copy"].tap()
     }
+    
+    private func copyOutsideApp() {
+        let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
+        contacts.launch()
+        let phoneNumber = contacts.tables.staticTexts["(888) 555-5512"]
+        if (!phoneNumber.exists) {
+            contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
+        }
+        phoneNumber.press(forDuration: 2.0);
+        sleep(1)
+        contacts.staticTexts["Copy"].tap()
+    }
 
     func testChangesOnInAppCopy() throws {
         let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
@@ -45,15 +57,7 @@ class testerino_crossplatformUITests: XCTestCase {
         let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
         app.launch()
 
-        let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
-        contacts.launch()
-        let phoneNumber = contacts.tables.staticTexts["(888) 555-5512"]
-        if (!phoneNumber.exists) {
-            contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
-        }
-        phoneNumber.press(forDuration: 2.0);
-        sleep(1)
-        contacts.staticTexts["Copy"].tap()
+        copyOutsideApp()
 
         app.activate()
         sleep(1)
@@ -81,15 +85,7 @@ class testerino_crossplatformUITests: XCTestCase {
         
         app.buttons["Toggle Custom"].tap()
 
-        let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
-        contacts.launch()
-        let phoneNumber = contacts.tables.staticTexts["(888) 555-5512"]
-        if (!phoneNumber.exists) {
-            contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
-        }
-        phoneNumber.press(forDuration: 2.0);
-        sleep(1)
-        contacts.staticTexts["Copy"].tap()
+        copyOutsideApp()
 
         app.activate()
         sleep(1)

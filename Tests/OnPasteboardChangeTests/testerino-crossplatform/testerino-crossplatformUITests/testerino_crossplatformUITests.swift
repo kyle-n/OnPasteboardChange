@@ -26,9 +26,7 @@ class testerino_crossplatformUITests: XCTestCase {
         textView.doubleTap()
         app.staticTexts["Copy"].tap()
         
-        print("--------------------- labels")
         let counter = app.staticTexts["counter"]
-        print(counter.value, "-------------------------- val")
-        XCTAssertTrue(counter.exists)
+        XCTAssertEqual(counter.label, "Changes: 1")
     }
 }

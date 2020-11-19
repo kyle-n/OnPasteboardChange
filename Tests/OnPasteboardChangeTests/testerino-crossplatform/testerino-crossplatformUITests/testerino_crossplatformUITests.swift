@@ -42,13 +42,39 @@ class testerino_crossplatformUITests: XCTestCase {
 
         let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
         contacts.launch()
-        contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
-        contacts.tables.staticTexts["(888) 555-5512"].press(forDuration: 2.0);
+        let phoneNumber = contacts.tables.staticTexts["(888) 555-5512"]
+        if (!phoneNumber.exists) {
+            contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
+        }
+        phoneNumber.press(forDuration: 2.0);
+        sleep(1)
         contacts.staticTexts["Copy"].tap()
 
         app.activate()
         sleep(1)
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.label, "Changes: 1")
+    }
+    
+    func testCopyInAppToGeneralWithCustomPasteboard() {
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        app.launch()
+        
+        app.buttons["Toggle Custom"].tap()
+        
+        let textView = app.textViews.firstMatch
+        textView.tap()
+
+        app.keys["O"].tap()
+        app.keys["n"].tap()
+        app.keys["e"].tap()
+
+        textView.doubleTap()
+        app.staticTexts["Copy"].tap()
+
+        sleep(1)
+
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.label, "Changes: 0")
     }
 }

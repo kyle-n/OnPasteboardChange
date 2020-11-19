@@ -7,6 +7,8 @@ final class OnPasteboardTests: XCTestCase {
     
     func testCopyTriggersPasteboard() {
         print("-------------------------")
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        print(app.buttons as Any)
         var pbChangeCounter = 0
         let label = Text("Label").onPasteboardChange { pbChangeCounter += 1 }
         

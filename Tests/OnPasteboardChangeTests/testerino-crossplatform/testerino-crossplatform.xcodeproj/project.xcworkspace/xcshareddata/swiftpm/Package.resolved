@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OnPasteboardChange",
+        "repositoryURL": "/Users/kylenazario/apps/OnPasteboardChange",
+        "state": {
+          "branch": "main",
+          "revision": "20aa12cd9a97c9b3bd5b5e30c66904d6b097dca8",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

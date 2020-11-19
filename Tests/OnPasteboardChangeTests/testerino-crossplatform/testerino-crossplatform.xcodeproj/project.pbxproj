@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		993211C72565883B002D1AA9 /* testerino_crossplatformApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993211B42565883A002D1AA9 /* testerino_crossplatformApp.swift */; };
+		993211C82565883B002D1AA9 /* testerino_crossplatformApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993211B42565883A002D1AA9 /* testerino_crossplatformApp.swift */; };
+		993211C92565883B002D1AA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993211B52565883A002D1AA9 /* ContentView.swift */; };
+		993211CA2565883B002D1AA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993211B52565883A002D1AA9 /* ContentView.swift */; };
+		993211CB2565883B002D1AA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993211B62565883B002D1AA9 /* Assets.xcassets */; };
+		993211CC2565883B002D1AA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 993211B62565883B002D1AA9 /* Assets.xcassets */; };
+		993211EB2565BA5B002D1AA9 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = 993211EA2565BA5B002D1AA9 /* OnPasteboardChange */; };
+		9932121C25662E58002D1AA9 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = 9932121B25662E58002D1AA9 /* OnPasteboardChange */; };
+		993212262566C8E7002D1AA9 /* testerino_crossplatformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993212252566C8E7002D1AA9 /* testerino_crossplatformUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		993212282566C8E7002D1AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993211AF2565883A002D1AA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 993211BA2565883B002D1AA9;
+			remoteInfo = "testerino-crossplatform (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		993211B42565883A002D1AA9 /* testerino_crossplatformApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerino_crossplatformApp.swift; sourceTree = "<group>"; };
+		993211B52565883A002D1AA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		993211B62565883B002D1AA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		993211BB2565883B002D1AA9 /* testerino-crossplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testerino-crossplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993211BE2565883B002D1AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		993211C32565883B002D1AA9 /* testerino-crossplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testerino-crossplatform.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993211C52565883B002D1AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		993211C62565883B002D1AA9 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		993211DF256588BD002D1AA9 /* testerino-crossplatform.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "testerino-crossplatform.entitlements"; sourceTree = "<group>"; };
+		993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "testerino-crossplatformUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993212252566C8E7002D1AA9 /* testerino_crossplatformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerino_crossplatformUITests.swift; sourceTree = "<group>"; };
+		993212272566C8E7002D1AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		993211B82565883B002D1AA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9932121C25662E58002D1AA9 /* OnPasteboardChange in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993211C02565883B002D1AA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993211EB2565BA5B002D1AA9 /* OnPasteboardChange in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993212202566C8E7002D1AA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		993211AE2565883A002D1AA9 = {
+			isa = PBXGroup;
+			children = (
+				993211DF256588BD002D1AA9 /* testerino-crossplatform.entitlements */,
+				993211B32565883A002D1AA9 /* Shared */,
+				993211BD2565883B002D1AA9 /* iOS */,
+				993211C42565883B002D1AA9 /* macOS */,
+				993212242566C8E7002D1AA9 /* testerino-crossplatformUITests */,
+				993211BC2565883B002D1AA9 /* Products */,
+				993211E92565BA5B002D1AA9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		993211B32565883A002D1AA9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				993211B42565883A002D1AA9 /* testerino_crossplatformApp.swift */,
+				993211B52565883A002D1AA9 /* ContentView.swift */,
+				993211B62565883B002D1AA9 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		993211BC2565883B002D1AA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				993211BB2565883B002D1AA9 /* testerino-crossplatform.app */,
+				993211C32565883B002D1AA9 /* testerino-crossplatform.app */,
+				993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		993211BD2565883B002D1AA9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				993211BE2565883B002D1AA9 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		993211C42565883B002D1AA9 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				993211C52565883B002D1AA9 /* Info.plist */,
+				993211C62565883B002D1AA9 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		993211E92565BA5B002D1AA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		993212242566C8E7002D1AA9 /* testerino-crossplatformUITests */ = {
+			isa = PBXGroup;
+			children = (
+				993212252566C8E7002D1AA9 /* testerino_crossplatformUITests.swift */,
+				993212272566C8E7002D1AA9 /* Info.plist */,
+			);
+			path = "testerino-crossplatformUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		993211BA2565883B002D1AA9 /* testerino-crossplatform (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 993211CF2565883B002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatform (iOS)" */;
+			buildPhases = (
+				993211B72565883B002D1AA9 /* Sources */,
+				993211B82565883B002D1AA9 /* Frameworks */,
+				993211B92565883B002D1AA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "testerino-crossplatform (iOS)";
+			packageProductDependencies = (
+				9932121B25662E58002D1AA9 /* OnPasteboardChange */,
+			);
+			productName = "testerino-crossplatform (iOS)";
+			productReference = 993211BB2565883B002D1AA9 /* testerino-crossplatform.app */;
+			productType = "com.apple.product-type.application";
+		};
+		993211C22565883B002D1AA9 /* testerino-crossplatform (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 993211D22565883B002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatform (macOS)" */;
+			buildPhases = (
+				993211BF2565883B002D1AA9 /* Sources */,
+				993211C02565883B002D1AA9 /* Frameworks */,
+				993211C12565883B002D1AA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "testerino-crossplatform (macOS)";
+			packageProductDependencies = (
+				993211EA2565BA5B002D1AA9 /* OnPasteboardChange */,
+			);
+			productName = "testerino-crossplatform (macOS)";
+			productReference = 993211C32565883B002D1AA9 /* testerino-crossplatform.app */;
+			productType = "com.apple.product-type.application";
+		};
+		993212222566C8E7002D1AA9 /* testerino-crossplatformUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9932122A2566C8E7002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatformUITests" */;
+			buildPhases = (
+				9932121F2566C8E7002D1AA9 /* Sources */,
+				993212202566C8E7002D1AA9 /* Frameworks */,
+				993212212566C8E7002D1AA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				993212292566C8E7002D1AA9 /* PBXTargetDependency */,
+			);
+			name = "testerino-crossplatformUITests";
+			productName = "testerino-crossplatformUITests";
+			productReference = 993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		993211AF2565883A002D1AA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					993211BA2565883B002D1AA9 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					993211C22565883B002D1AA9 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					993212222566C8E7002D1AA9 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 993211BA2565883B002D1AA9;
+					};
+				};
+			};
+			buildConfigurationList = 993211B22565883A002D1AA9 /* Build configuration list for PBXProject "testerino-crossplatform" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 993211AE2565883A002D1AA9;
+			packageReferences = (
+				9932121A25662E58002D1AA9 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
+			);
+			productRefGroup = 993211BC2565883B002D1AA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				993211BA2565883B002D1AA9 /* testerino-crossplatform (iOS) */,
+				993211C22565883B002D1AA9 /* testerino-crossplatform (macOS) */,
+				993212222566C8E7002D1AA9 /* testerino-crossplatformUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		993211B92565883B002D1AA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993211CB2565883B002D1AA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993211C12565883B002D1AA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993211CC2565883B002D1AA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993212212566C8E7002D1AA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		993211B72565883B002D1AA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993211C92565883B002D1AA9 /* ContentView.swift in Sources */,
+				993211C72565883B002D1AA9 /* testerino_crossplatformApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993211BF2565883B002D1AA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993211CA2565883B002D1AA9 /* ContentView.swift in Sources */,
+				993211C82565883B002D1AA9 /* testerino_crossplatformApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9932121F2566C8E7002D1AA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				993212262566C8E7002D1AA9 /* testerino_crossplatformUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		993212292566C8E7002D1AA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 993211BA2565883B002D1AA9 /* testerino-crossplatform (iOS) */;
+			targetProxy = 993212282566C8E7002D1AA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		993211CD2565883B002D1AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		993211CE2565883B002D1AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		993211D02565883B002D1AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "testerino-crossplatform.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatform";
+				PRODUCT_NAME = "testerino-crossplatform";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		993211D12565883B002D1AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "testerino-crossplatform.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatform";
+				PRODUCT_NAME = "testerino-crossplatform";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		993211D32565883B002D1AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatform";
+				PRODUCT_NAME = "testerino-crossplatform";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		993211D42565883B002D1AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatform";
+				PRODUCT_NAME = "testerino-crossplatform";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9932122B2566C8E7002D1AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				INFOPLIST_FILE = "testerino-crossplatformUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatformUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "testerino-crossplatform (iOS)";
+			};
+			name = Debug;
+		};
+		9932122C2566C8E7002D1AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				INFOPLIST_FILE = "testerino-crossplatformUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatformUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "testerino-crossplatform (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		993211B22565883A002D1AA9 /* Build configuration list for PBXProject "testerino-crossplatform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				993211CD2565883B002D1AA9 /* Debug */,
+				993211CE2565883B002D1AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		993211CF2565883B002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatform (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				993211D02565883B002D1AA9 /* Debug */,
+				993211D12565883B002D1AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		993211D22565883B002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatform (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				993211D32565883B002D1AA9 /* Debug */,
+				993211D42565883B002D1AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9932122A2566C8E7002D1AA9 /* Build configuration list for PBXNativeTarget "testerino-crossplatformUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9932122B2566C8E7002D1AA9 /* Debug */,
+				9932122C2566C8E7002D1AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9932121A25662E58002D1AA9 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/kylenazario/apps/OnPasteboardChange";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		993211EA2565BA5B002D1AA9 /* OnPasteboardChange */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OnPasteboardChange;
+		};
+		9932121B25662E58002D1AA9 /* OnPasteboardChange */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9932121A25662E58002D1AA9 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
+			productName = OnPasteboardChange;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 993211AF2565883A002D1AA9 /* Project object */;
+}

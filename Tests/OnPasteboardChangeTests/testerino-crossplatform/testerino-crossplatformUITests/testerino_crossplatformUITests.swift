@@ -12,6 +12,10 @@ class testerino_crossplatformUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
+    
+    override func tearDownWithError() throws {
+        XCUIApplication().terminate()
+    }
 
     func testChangesOnInAppCopy() throws {
         let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")

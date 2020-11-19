@@ -92,4 +92,16 @@ class testerino_crossplatformUITests: XCTestCase {
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.label, "Changes: 0")
     }
+    
+    func testCopyInAppToCustomPasteboard() {
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        app.launch()
+        
+        app.buttons["Toggle Custom"].tap()
+        app.buttons["Add to Custom Pasteboard"].tap()
+        
+        sleep(1)
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.label, "Changes: 1")
+    }
 }

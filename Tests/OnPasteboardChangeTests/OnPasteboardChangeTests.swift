@@ -1,15 +1,25 @@
 import XCTest
+import SwiftUI
+//import UIKit
 @testable import OnPasteboardChange
 
 final class OnPasteboardTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-//        XCTAssertEqual(OnPasteboard().text, "Hello, World!")
+    
+    func testCopyTriggersPasteboard() {
+        print("-------------------------")
+        var pbChangeCounter = 0
+        let _ = Text("Label").onPasteboardChange { pbChangeCounter += 1 }
+        
+        let mockPBItem = ["fake": "item"]
+        let loops = 3
+        for _ in (0..<loops) {
+//            UIPasteboard.general.addItems([mockPBItem])
+        }
+        XCTAssertEqual(pbChangeCounter, 0)
+        print("=======================================")
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testCopyTriggersPasteboard", testCopyTriggersPasteboard)
     ]
 }

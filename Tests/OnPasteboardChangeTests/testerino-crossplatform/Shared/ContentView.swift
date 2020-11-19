@@ -24,7 +24,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button("Toggle Custom") { pbMode.toggle() }
-            Button("Add to custom Pasteboard") {
+            Button("Add to Custom Pasteboard") {
                 #if os(macOS)
                 customPb.setString("added to custom", forType: .string)
                 #else
@@ -32,7 +32,7 @@ struct ContentView: View {
                 customPb.addItems([mockItem])
                 #endif
             }
-            Text(String(counter))
+            Text("Changes: " + String(counter))
             
             if pbMode == .usingDefault {
                 TextEditor(text: $text)

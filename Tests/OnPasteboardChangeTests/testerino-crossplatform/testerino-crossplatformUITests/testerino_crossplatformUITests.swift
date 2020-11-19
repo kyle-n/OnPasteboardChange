@@ -28,7 +28,9 @@ class testerino_crossplatformUITests: XCTestCase {
     func testChangesOnInAppCopy() throws {
         print("----------------------- hai")
         
-        
+        XCTAssertTrue(app!.staticTexts["Changes: 0"].exists)
+        XCTAssertFalse(app!.staticTexts["Changes: 1"].exists)
+        print("8888888888888888888888 yep")
         
         let textView = app!.textViews.firstMatch
         textView.tap()
@@ -36,8 +38,8 @@ class testerino_crossplatformUITests: XCTestCase {
         textView.doubleTap()
         app!.menuItems["Copy"].tap()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertFalse(app!.staticTexts["Changes: 0"].exists)
+        XCTAssertTrue(app!.staticTexts["Changes: 1"].exists)
     }
 
     func testLaunchPerformance() throws {

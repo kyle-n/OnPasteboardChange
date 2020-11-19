@@ -16,10 +16,8 @@ class testerino_crossplatformUITests: XCTestCase {
     override func tearDownWithError() throws {
         XCUIApplication().terminate()
     }
-
-    func testChangesOnInAppCopy() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
-        app.launch()
+    
+    private func copyInApp(app: XCUIApplication) {
         let textView = app.textViews.firstMatch
         textView.tap()
 
@@ -29,6 +27,13 @@ class testerino_crossplatformUITests: XCTestCase {
 
         textView.doubleTap()
         app.staticTexts["Copy"].tap()
+    }
+
+    func testChangesOnInAppCopy() throws {
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        app.launch()
+        
+        copyInApp(app: app)
 
         sleep(1)
 
@@ -62,15 +67,7 @@ class testerino_crossplatformUITests: XCTestCase {
         
         app.buttons["Toggle Custom"].tap()
         
-        let textView = app.textViews.firstMatch
-        textView.tap()
-
-        app.keys["O"].tap()
-        app.keys["n"].tap()
-        app.keys["e"].tap()
-
-        textView.doubleTap()
-        app.staticTexts["Copy"].tap()
+        copyInApp(app: app)
 
         sleep(1)
 

@@ -32,6 +32,8 @@ struct ContentView: View {
                 customPb.addItems([mockItem])
                 #endif
             }
+            Text(changeCount)
+                .accessibility(identifier: "counter")
             
             if pbMode == .usingDefault {
                 TextEditor(text: $text)
@@ -46,7 +48,6 @@ struct ContentView: View {
                     }
             }
         }
-        .navigationTitle(changeCount)
     }
     
     private var changeCount: String {

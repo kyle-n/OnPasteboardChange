@@ -11,7 +11,6 @@ class testerino_crossplatformUITests: XCTestCase {
 
     override func setUpWithError() throws {
         continueAfterFailure = false
-        print("----------------------------------------------------------------")
     }
 
     func testChangesOnInAppCopy() throws {
@@ -26,25 +25,26 @@ class testerino_crossplatformUITests: XCTestCase {
 
         textView.doubleTap()
         app.staticTexts["Copy"].tap()
-        
+
         sleep(1)
 
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.label, "Changes: 1")
     }
     
-//    func testCopyOutsideApp() {
-//        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
-//        app.launch()
-//
-//        let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
-//        contacts.launch()
-//        contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
-//        contacts.tables.staticTexts["(888) 555-5512"].press(forDuration: 2.0);
-//        contacts.staticTexts["Copy"].tap()
-//
-//        app.activate()
-//        let counter = app.staticTexts["counter"]
-//        XCTAssertEqual(counter.label, "Changes: 1")
-//    }
+    func testCopyOutsideApp() {
+        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        app.launch()
+
+        let contacts = XCUIApplication(bundleIdentifier: "com.apple.MobileAddressBook")
+        contacts.launch()
+        contacts.tables["ContactsListView"].staticTexts["John Appleseed"].tap()
+        contacts.tables.staticTexts["(888) 555-5512"].press(forDuration: 2.0);
+        contacts.staticTexts["Copy"].tap()
+
+        app.activate()
+        sleep(1)
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.label, "Changes: 1")
+    }
 }

@@ -1,35 +1,64 @@
 //
-//  ContentView.swift
-//  Shared
+//  TestApp.swift
 //
-//  Created by Kyle Nazario on 11/18/20.
+//
+//  Created by Kyle Nazario on 11/19/20.
 //
 
 import SwiftUI
 import OnPasteboardChange
 
+#if os(macOS)
+import AppKit
+#else
+import UIKit
+#endif
+
 struct ContentView: View {
-    @State private var text: String = ""
-    @State private var editorVisible: Bool = true
+    @State var text: String = ""
+    @State var counter: Int = 0
+    @State var pbMode: PBMode = .usingDefault
+    
+    let customPb = UIOrNSPasteboard.withUniqueName()
     
     var body: some View {
         VStack {
-            Button("Add to Custom Pasteboard") {
-                editorVisible.toggle()
+            Button("Toggle Custom") { pbMode.toggle() }
+            Button("Add to custom Pasteboard") {
+                #if os(macOS)
+                customPb.setString("added to custom", forType: .string)
+                #else
+                let mockItem = ["mock": "item"]
+                customPb.addItems([mockItem])
+                #endif
             }
-            if editorVisible {
+            Text(String(counter))
+            
+            if pbMode == .usingDefault {
                 TextEditor(text: $text)
-                    .padding()
                     .onPasteboardChange {
-                        print("pb changed")
+                        counter += 1
+                    }
+            }
+            if pbMode == .usingCustom {
+                TextEditor(text: $text)
+                    .onPasteboardChange(for: customPb) {
+                        counter += 1
                     }
             }
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    enum PBMode {
+        case usingDefault
+        case usingCustom
+        
+        mutating func toggle() {
+            if self == .usingDefault {
+                self = .usingCustom
+            } else {
+                self = .usingDefault
+            }
+        }
     }
 }

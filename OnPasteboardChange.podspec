@@ -16,6 +16,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = 'Sources', 'Sources/**/*.{swift}'
   spec.swift_versions = '5.3.1'
-  spec.platforms = { :ios => '14.0', :osx => '10.16' }
+  spec.platforms = { :ios => '14.0', :osx => '10.16.0' }
 
 end

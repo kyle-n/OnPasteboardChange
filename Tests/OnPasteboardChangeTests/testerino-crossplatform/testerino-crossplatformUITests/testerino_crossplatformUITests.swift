@@ -39,10 +39,11 @@ class testerino_crossplatformUITests: XCTestCase {
         phoneNumber.press(forDuration: 2.0);
         sleep(1)
         contacts.staticTexts["Copy"].tap()
+        sleep(1)
     }
 
     func testChangesOnInAppCopy() throws {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        let app = XCUIApplication()
         app.launch()
         
         copyInApp(app: app)
@@ -54,7 +55,7 @@ class testerino_crossplatformUITests: XCTestCase {
     }
     
     func testCopyOutsideApp() {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        let app = XCUIApplication()
         app.launch()
 
         copyOutsideApp()
@@ -66,7 +67,7 @@ class testerino_crossplatformUITests: XCTestCase {
     }
     
     func testCopyInAppToGeneralWithCustomPasteboard() {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        let app = XCUIApplication()
         app.launch()
         
         app.buttons["Toggle Custom"].tap()
@@ -80,7 +81,7 @@ class testerino_crossplatformUITests: XCTestCase {
     }
     
     func testCopyOutsideAppWithCustomPasteboard() {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        let app = XCUIApplication()
         app.launch()
         
         app.buttons["Toggle Custom"].tap()
@@ -94,7 +95,7 @@ class testerino_crossplatformUITests: XCTestCase {
     }
     
     func testCopyInAppToCustomPasteboard() {
-        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
+        let app = XCUIApplication()
         app.launch()
         
         app.buttons["Toggle Custom"].tap()

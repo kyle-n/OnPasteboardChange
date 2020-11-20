@@ -46,16 +46,16 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
         textView.typeKey(.delete, modifierFlags: .command)
     }
 
-//    func testChangesOnInAppCopy() throws {
-//        let app = XCUIApplication()
-//        app.launch()
-//
-//        copyInApp()
-//
-//        sleep(3)
-//        let counter = app.staticTexts["counter"]
-//        XCTAssertEqual(counter.value as! String, "Changes: 1")
-//    }
+    func testChangesOnInAppCopy() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        copyInApp()
+
+        sleep(3)
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.value as! String, "Changes: 1")
+    }
     
     func testCopyOutsideApp() {
         let app = XCUIApplication()
@@ -71,31 +71,31 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
     
     func testCopyInAppToGeneralWithCustomPasteboard() {
                 
-//        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
-//        app.launch()
-//
-//        app.buttons["Toggle Custom"].tap()
-//
-//        copyInApp(app: app)
-//
-//        sleep(1)
-//
-//        let counter = app.staticTexts["counter"]
-//        XCTAssertEqual(counter.label, "Changes: 0")
+        let app = XCUIApplication()
+        app.launch()
+
+        app.buttons["Toggle Custom"].tap()
+
+        copyInApp()
+
+        sleep(3)
+
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.value as! String, "Changes: 0")
     }
     
     func testCopyOutsideAppWithCustomPasteboard() {
-//        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
-//        app.launch()
-//
-//        app.buttons["Toggle Custom"].tap()
-//
-//        copyOutsideApp()
-//
-//        app.activate()
-//        sleep(1)
-//        let counter = app.staticTexts["counter"]
-//        XCTAssertEqual(counter.label, "Changes: 0")
+        let app = XCUIApplication()
+        app.launch()
+
+        app.buttons["Toggle Custom"].tap()
+
+        copyOutsideApp()
+
+        app.activate()
+        sleep(3)
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.value as! String, "Changes: 0")
     }
     
     func testCopyInAppToCustomPasteboard() {

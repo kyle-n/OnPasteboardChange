@@ -11,7 +11,16 @@ import SwiftUI
 struct testerino_crossplatformApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            windowContent
         }
+    }
+    
+    private var windowContent: some View {
+        #if os(macOS)
+        return ContentView()
+            .frame(width: 300, height: 300)
+        #else
+        return ContentView()
+        #endif
     }
 }

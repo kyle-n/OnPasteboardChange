@@ -13,4 +13,4 @@ xcodebuild test -sdk iphonesimulator -destination 'platform=iOS Simulator,name=i
 killall Simulator
 defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool true
 
-# xcodebuild test -sdk macosx11.0 -destination 'platform=OS X,arch=x86_64' -scheme 'testerino-crossplatform (macOS)' -project $testerino_project
+xcodebuild test -sdk macosx11.0 -destination 'platform=OS X,arch=x86_64' -scheme 'testerino-crossplatform (macOS)' -project $testerino_project

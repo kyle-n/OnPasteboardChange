@@ -81,7 +81,7 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.value as! String, "Changes: 0")
     }
-    
+
     func testCopyOutsideAppWithCustomPasteboard() {
         let app = XCUIApplication()
         app.launch()
@@ -97,15 +97,15 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
     }
     
     func testCopyInAppToCustomPasteboard() {
-//        let app = XCUIApplication(bundleIdentifier: "com.kylenazario.testerino-crossplatform")
-//        app.launch()
-//
-//        app.buttons["Toggle Custom"].tap()
-//        app.buttons["Add to Custom Pasteboard"].tap()
-//
-//        sleep(1)
-//        let counter = app.staticTexts["counter"]
-//        XCTAssertEqual(counter.label, "Changes: 1")
+        let app = XCUIApplication()
+        app.launch()
+
+        app.buttons["Toggle Custom"].tap()
+        app.buttons["Add to Custom Pasteboard"].tap()
+
+        sleep(3)
+        let counter = app.staticTexts["counter"]
+        XCTAssertEqual(counter.value as! String, "Changes: 1")
     }
 
 }

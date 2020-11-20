@@ -26,6 +26,7 @@ struct ContentView: View {
             Button("Toggle Custom") { pbMode.toggle() }
             Button("Add to Custom Pasteboard") {
                 #if os(macOS)
+                customPb.declareTypes([.string], owner: nil)
                 customPb.setString("added to custom", forType: .string)
                 #else
                 let mockItem = ["mock": "item"]

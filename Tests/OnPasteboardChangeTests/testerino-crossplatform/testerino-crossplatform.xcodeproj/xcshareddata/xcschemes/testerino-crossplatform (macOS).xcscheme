@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "993212222566C8E7002D1AA9"
-               BuildableName = "testerino-crossplatformUITests.xctest"
-               BlueprintName = "testerino-crossplatformUITests"
-               ReferencedContainer = "container:testerino-crossplatform.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "99CC129925682F6400E8BBDC"
                BuildableName = "testerino-crossplatformMacOSUITests.xctest"
                BlueprintName = "testerino-crossplatformMacOSUITests"

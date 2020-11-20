@@ -16,6 +16,7 @@
 		993211EB2565BA5B002D1AA9 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = 993211EA2565BA5B002D1AA9 /* OnPasteboardChange */; };
 		9932121C25662E58002D1AA9 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = 9932121B25662E58002D1AA9 /* OnPasteboardChange */; };
 		993212262566C8E7002D1AA9 /* testerino_crossplatformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993212252566C8E7002D1AA9 /* testerino_crossplatformUITests.swift */; };
+		99CC129D25682F6400E8BBDC /* testerino_crossplatformMacOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC129C25682F6400E8BBDC /* testerino_crossplatformMacOSUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 993211BA2565883B002D1AA9;
 			remoteInfo = "testerino-crossplatform (iOS)";
+		};
+		99CC129F25682F6400E8BBDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993211AF2565883A002D1AA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 993211C22565883B002D1AA9;
+			remoteInfo = "testerino-crossplatform (macOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -41,6 +49,9 @@
 		993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "testerino-crossplatformUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		993212252566C8E7002D1AA9 /* testerino_crossplatformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerino_crossplatformUITests.swift; sourceTree = "<group>"; };
 		993212272566C8E7002D1AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99CC129A25682F6400E8BBDC /* testerino-crossplatformMacOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "testerino-crossplatformMacOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99CC129C25682F6400E8BBDC /* testerino_crossplatformMacOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerino_crossplatformMacOSUITests.swift; sourceTree = "<group>"; };
+		99CC129E25682F6400E8BBDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99CC129725682F6400E8BBDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +96,7 @@
 				993211BD2565883B002D1AA9 /* iOS */,
 				993211C42565883B002D1AA9 /* macOS */,
 				993212242566C8E7002D1AA9 /* testerino-crossplatformUITests */,
+				99CC129B25682F6400E8BBDC /* testerino-crossplatformMacOSUITests */,
 				993211BC2565883B002D1AA9 /* Products */,
 				993211E92565BA5B002D1AA9 /* Frameworks */,
 			);
@@ -99,6 +118,7 @@
 				993211BB2565883B002D1AA9 /* testerino-crossplatform.app */,
 				993211C32565883B002D1AA9 /* testerino-crossplatform.app */,
 				993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */,
+				99CC129A25682F6400E8BBDC /* testerino-crossplatformMacOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +154,15 @@
 				993212272566C8E7002D1AA9 /* Info.plist */,
 			);
 			path = "testerino-crossplatformUITests";
+			sourceTree = "<group>";
+		};
+		99CC129B25682F6400E8BBDC /* testerino-crossplatformMacOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				99CC129C25682F6400E8BBDC /* testerino_crossplatformMacOSUITests.swift */,
+				99CC129E25682F6400E8BBDC /* Info.plist */,
+			);
+			path = "testerino-crossplatformMacOSUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +226,24 @@
 			productReference = 993212232566C8E7002D1AA9 /* testerino-crossplatformUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		99CC129925682F6400E8BBDC /* testerino-crossplatformMacOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99CC12A325682F6400E8BBDC /* Build configuration list for PBXNativeTarget "testerino-crossplatformMacOSUITests" */;
+			buildPhases = (
+				99CC129625682F6400E8BBDC /* Sources */,
+				99CC129725682F6400E8BBDC /* Frameworks */,
+				99CC129825682F6400E8BBDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99CC12A025682F6400E8BBDC /* PBXTargetDependency */,
+			);
+			name = "testerino-crossplatformMacOSUITests";
+			productName = "testerino-crossplatformMacOSUITests";
+			productReference = 99CC129A25682F6400E8BBDC /* testerino-crossplatformMacOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,6 +262,10 @@
 					993212222566C8E7002D1AA9 = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 993211BA2565883B002D1AA9;
+					};
+					99CC129925682F6400E8BBDC = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 993211C22565883B002D1AA9;
 					};
 				};
 			};
@@ -237,6 +288,7 @@
 				993211BA2565883B002D1AA9 /* testerino-crossplatform (iOS) */,
 				993211C22565883B002D1AA9 /* testerino-crossplatform (macOS) */,
 				993212222566C8E7002D1AA9 /* testerino-crossplatformUITests */,
+				99CC129925682F6400E8BBDC /* testerino-crossplatformMacOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +311,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		993212212566C8E7002D1AA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99CC129825682F6400E8BBDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,6 +353,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		99CC129625682F6400E8BBDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99CC129D25682F6400E8BBDC /* testerino_crossplatformMacOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,6 +368,11 @@
 			isa = PBXTargetDependency;
 			target = 993211BA2565883B002D1AA9 /* testerino-crossplatform (iOS) */;
 			targetProxy = 993212282566C8E7002D1AA9 /* PBXContainerItemProxy */;
+		};
+		99CC12A025682F6400E8BBDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 993211C22565883B002D1AA9 /* testerino-crossplatform (macOS) */;
+			targetProxy = 99CC129F25682F6400E8BBDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -556,6 +628,48 @@
 			};
 			name = Release;
 		};
+		99CC12A125682F6400E8BBDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				INFOPLIST_FILE = "testerino-crossplatformMacOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatformMacOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "testerino-crossplatform (macOS)";
+			};
+			name = Debug;
+		};
+		99CC12A225682F6400E8BBDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JMG343Q6QB;
+				INFOPLIST_FILE = "testerino-crossplatformMacOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kylenazario.testerino-crossplatformMacOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "testerino-crossplatform (macOS)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -591,6 +705,15 @@
 			buildConfigurations = (
 				9932122B2566C8E7002D1AA9 /* Debug */,
 				9932122C2566C8E7002D1AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99CC12A325682F6400E8BBDC /* Build configuration list for PBXNativeTarget "testerino-crossplatformMacOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99CC12A125682F6400E8BBDC /* Debug */,
+				99CC12A225682F6400E8BBDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

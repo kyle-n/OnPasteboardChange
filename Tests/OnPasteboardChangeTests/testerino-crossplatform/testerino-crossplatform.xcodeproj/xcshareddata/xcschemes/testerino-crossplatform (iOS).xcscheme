@@ -52,6 +52,16 @@
                ReferencedContainer = "container:testerino-crossplatform.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "99CC129925682F6400E8BBDC"
+               BuildableName = "testerino-crossplatformMacOSUITests.xctest"
+               BlueprintName = "testerino-crossplatformMacOSUITests"
+               ReferencedContainer = "container:testerino-crossplatform.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

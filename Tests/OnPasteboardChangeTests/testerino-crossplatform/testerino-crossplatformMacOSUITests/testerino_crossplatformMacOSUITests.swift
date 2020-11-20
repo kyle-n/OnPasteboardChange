@@ -38,7 +38,8 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
 
         copyInApp()
         
+        sleep(3)
         let counter = app.staticTexts["counter"]
-        XCTAssertEqual(counter.label, "Changes: 1")
+        XCTAssertEqual(counter.value as! String, "Changes: 1")
     }
 }

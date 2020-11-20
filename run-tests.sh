@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 testerino_project='Tests/OnPasteboardChangeTests/testerino-crossplatform/testerino-crossplatform.xcodeproj'
 
 killall Simulator

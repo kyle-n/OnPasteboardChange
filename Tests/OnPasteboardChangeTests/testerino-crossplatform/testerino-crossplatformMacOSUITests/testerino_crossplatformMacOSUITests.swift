@@ -42,8 +42,7 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
         textView.typeKey("a", modifierFlags: .command)
         textView.typeKey("c", modifierFlags: .command)
         
-        textView.typeKey("q", modifierFlags: .command)
-        textView.typeKey(.delete, modifierFlags: .command)
+        textEdit.terminate()
     }
 
     func testChangesOnInAppCopy() throws {
@@ -56,7 +55,7 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.value as! String, "Changes: 1")
     }
-    
+
     func testCopyOutsideApp() {
         let app = XCUIApplication()
         app.launch()
@@ -68,9 +67,8 @@ class testerino_crossplatformMacOSUITests: XCTestCase {
         let counter = app.staticTexts["counter"]
         XCTAssertEqual(counter.value as! String, "Changes: 1")
     }
-    
+
     func testCopyInAppToGeneralWithCustomPasteboard() {
-                
         let app = XCUIApplication()
         app.launch()
 

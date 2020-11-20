@@ -12,14 +12,17 @@ let package = Package(
     products: [
         .library(
             name: "OnPasteboardChange",
-            targets: ["OnPasteboardChange"]),
+            targets: ["OnPasteboardChange"]
+        ),
     ],
     targets: [
         .target(
             name: "OnPasteboardChange",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "OnPasteboardChangeTests",
-            dependencies: ["OnPasteboardChange"]),
+            dependencies: ["OnPasteboardChange"]
+        ),
     ]
 )

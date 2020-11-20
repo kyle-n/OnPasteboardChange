@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-test_failed_lines=$(./run-tests.sh | grep -c "** TEST FAILED **")
-if (( $test_failed_lines > 0 )); then
-  echo ERROR: Aborting version update
-  exit 1
-else
+./run-tests.sh > output.txt
+passing_test_suites=$(grep -c "\*\* TEST SUCCEEDED \*\*" output.txt)
+rm output.txt
+if (($passing_test_suites==2)); then
   git tag $1
   echo "Set version $1"
+else
+  echo ERROR: Not all tests passed, aborting version update
+  exit 1
 fi

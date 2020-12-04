@@ -70,3 +70,5 @@ struct ContentView: View {
 ## Credits
 
 Created by [Kyle Nazario](https://twitter.com/kbn_au).
+
+<img align="middle" src="https://github.com/kyle-n/OnPasteboardChange/raw/main/Tests/clippy.png" alt="Clippy wants to help you read UIPasteboard">
